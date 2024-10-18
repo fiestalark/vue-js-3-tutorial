@@ -39,7 +39,14 @@ const app = Vue.createApp({
         toggleFav(book) {
             book.isFav = !book.isFav
         }
-    }
+    },
+    computed: {
+        filteredBooks() {
+            return this.books.filter((book) => book.isFav)
+        }
+    } 
 })
 
 app.mount('#app')
+
+// Computed property is a way to define a data property inside components that depends on other data inside that component
