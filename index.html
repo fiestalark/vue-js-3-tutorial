@@ -16,7 +16,7 @@
         <div v-if="showBooks">
             <ul>
                 <!-- v-for to iterate over array of book objects-->
-                <li v-for="book in books">
+                <li v-for="book in books" :class="{fav: book.isFav}">
                     <img :src="book.img" :alt="book.title">
                     <h3>{{ book.title }}</h3>
                     <p>{{ book.author }}</p>
