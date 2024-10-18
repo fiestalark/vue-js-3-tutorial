@@ -9,7 +9,13 @@
     <h1>Hello Vue :)</h1>
 
     <div id="app">
-        <h2>I am the template now</h2>
+        <p>{{ title }} - {{ author }} - {{ age }}</p>
+
+        <!--v-on directive for click-->
+        <button v-on:click="age++">Increase age</button>
+        <button v-on:click="age--">Decrease age</button>
+        <!--@ is shorthand for v-on: -->
+        <div @click="title = 'something else'">Change title</div>
     </div>
     
     <script src="app.js"></script>
