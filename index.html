@@ -10,10 +10,14 @@
     <h1>Hello Vue :)</h1>
 
     <div id="app">
+        <!-- Attribute binding: bind dynamic values to html attributes (can use v-bind: or ':', both do the same thing) -->
+         <a :href="url">Cool website</a>
         <!--Conditional rendering using v-if-->
         <div v-if="showBooks">
             <ul>
+                <!-- v-for to iterate over array of book objects-->
                 <li v-for="book in books">
+                    <img :src="book.img" :alt="book.title">
                     <h3>{{ book.title }}</h3>
                     <p>{{ book.author }}</p>
                 </li>
