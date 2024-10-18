@@ -9,13 +9,25 @@
     <h1>Hello Vue :)</h1>
 
     <div id="app">
-        <p>{{ title }} - {{ author }} - {{ age }}</p>
+        <!--Conditional rendering using v-if-->
+        <div v-if="showBooks">
+            <p>{{ title }} - {{ author }} - {{ age }}</p>
+        </div>
+        
 
         <!--v-on directive for click-->
         <button v-on:click="age++">Increase age</button>
         <button v-on:click="age--">Decrease age</button>
+        <button @click="toggleShowBooks">
+            <span v-if="showBooks">Hide Books</span>
+            <!--<span v-if="!showBooks">Show Books</span>-->
+            <span v-else>Show Books</span>
+        </button>
+        <!-- Uses CSS using display block when true, or display none when false. V-if takes out of DOM completely
+         generally speaking, hiding/showing things from DOM is more time consuming than hiding via css-->
+        <div v-show="showBooks">Currently showing books</div>
         <!--@ is shorthand for v-on: -->
-        <div @click="title = 'something else'">Change title</div>
+        <div @click="changeTitle('Oathbringer')">Change title</div>
     </div>
     
     <script src="app.js"></script>

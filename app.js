@@ -5,9 +5,19 @@ const app = Vue.createApp({
     // Make a function & then return object within that function
     data() {
         return {
+            showBooks: true,
             title: 'The Final Empire',
             author: 'Brandon Sanderson',
             age: 45
+        }
+    },
+    methods: {
+        changeTitle(title) {
+           //this.title = 'Words of Radiance'
+            this.title = title
+        },
+        toggleShowBooks() {
+            this.showBooks = !this.showBooks
         }
     }
 })
